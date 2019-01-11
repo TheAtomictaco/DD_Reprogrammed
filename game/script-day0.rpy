@@ -28,7 +28,7 @@ label day0_main:
     "I tried to go back to sleep, but there was no use."
     scene bg bedroom
     with wipeleft_scene
-    play music perspective
+    play music t8
     "Well, I can't just lay here, I should get ready for school."
     "I get changed and head to the kitchen."
     scene bg kitchen
