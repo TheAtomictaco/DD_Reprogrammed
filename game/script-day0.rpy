@@ -5,7 +5,7 @@ label day0_main:
     $ energy = 100;
     $ called_sayo1 =False
     $ do_text = "What should I do?"
-    $ time = "day"
+    $ time = "morning"
     $ state = "Day 1"
     stop music fadeout 2.0
     scene bg residential_day
@@ -37,31 +37,10 @@ label day0_main:
     mc "Man, I really need to buy more food."
     "I settle for an apple and orange juice"
     mc "I should start heading toward school so Sayori won't beat me there."
-    show screen tear(20, 0.1, 0.1, 0, 40)
-    play sound "sfx/s_kill_glitch1.ogg"
-    pause 0.25
-    hide screen tear
-    stop music fadeout 2.0
-    show monika 1k zorder 2 at t11
-    m 5a "As you may have noticed I as club pressident again."
-    m "Now, I will give you more freedos this time."
-    show monika 1a zorder 2 at t11
-    m "I need to tell you about the changes in the game."
-    mc "Changes in the what?"
-    m 1i"Opps forgot about that."
-    show screen tear(20, 0.1, 0.1, 0, 40)
-    play sound "sfx/s_kill_glitch1.ogg"
-    pause 0.60
-    hide screen tear
-    m 1a "There we go."
-    m "So I wanted to talk to you about how the game works now."
-    m "First off the game may still look like it is going in the same direction, but soon it is going to change a lot!"
-    m "Now, you know how you would choose a route for one of us with the poems?"
-    m 1c "That still works, but now you can go on many other routes!"
-    m 3b "When you make a choice it adds points to certain counters"
-    m 3a "These points will change the outcome of the game."
-    m 1a "Not every choice will give you points though."
-    m 1b "So make sure you choose wisely!"
+    $ nextscene = "day" + str(chapter) + "_select"
+    $ location = "kitchen"
+    jump expression nextscene
+
  
 
 
@@ -76,9 +55,11 @@ label day0_main:
     hide monika
     scene bg residential_day
     with wipeleft_scene
+
+label ch0_school_Sayori:
     play music t2
     s "Heeeeeeeyyy!!"
-    "I see Sayori running toward me fros the distance, waving her arms in the air like she's totally oblivious to any attention she might draw to herself."
+    "I see Sayori running toward me from the distance, waving her arms in the air like she's totally oblivious to any attention she might draw to herself."
     "Sayori has been my neighbor and good friend since we were children."
     stop music fadeout 2.0
     $ style.say_dialogue = style.edited
@@ -663,6 +644,7 @@ label day0_main:
     "As I get near to m home, I wonder what I should do for the rest of the afternoon."
     $ anime0 = False
     $ location = "street"
+    $ time = "day"
     call day0_select from _call_day0_select
 
     return

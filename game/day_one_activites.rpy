@@ -44,9 +44,13 @@ label day0_select:
                 $ do_text = "What should I do then?"
                 jump day0_select
         "Go shopping" if food == False:
+            if time == "morning":
+                "I can't go shopping.  I have to go to school."
+                $ do_text = "What should I do then?"
+                jump day0_select
             if time == "day":
                 jump day0_shopping
-            else:
+            if time == "night":
                 "It's too late to go shopping."
                 $ do_text = "What should I do then?"
                 jump day0_select

@@ -16,7 +16,15 @@ label move:
             jump expression nextscene
 
         "Library" if location == "town":
+            if time == "morning":
+                scene bg library
+                with wipeleft_scene
+                $ location = "library"
             if time == "day":
+                scene bg library
+                with wipeleft_scene
+                $ location = "library"
+            if time == "evening":
                 scene bg library
                 with wipeleft_scene
                 $ location = "library"
@@ -26,8 +34,12 @@ label move:
             jump expression nextscene
 
         "Town" if location != "town":
+            if time == "morning":
+                scene bg town_day
             if time == "day":
                 scene bg town_day
+            if time == "evening":
+                scene bg town_after
             if time == "night":
                 scene bg town_night
             with wipeleft_scene
@@ -36,7 +48,15 @@ label move:
             jump expression nextscene
 
         "Park" if location != "park":
+            if time == "morning":
+                scene bg park
+                with wipeleft_scene
+                $ location = "park"
             if time == "day":
+                scene bg park
+                with wipeleft_scene
+                $ location = "park"
+            if time == "evening":
                 scene bg park
                 with wipeleft_scene
                 $ location = "park"
@@ -46,18 +66,31 @@ label move:
             jump expression nextscene
 
         "My Street" if location != "street":
+            if time == "morning":
+                scene bg residential_day
+                jump ch0_school_Sayori
             if time == "day":
                 scene bg residential_day
+                $ nextscene = "day" + str(chapter) + "_select"
+                jump expression nextscene
             if time == "night":
                 scene bg residential_night
+                $ nextscene = "day" + str(chapter) + "_select"
+                jump expression nextscene
+            if time == "evening":
+                scene bg residential_day
+                $ nextscene = "day" + str(chapter) + "_select"
+                jump expression nextscene
             with wipeleft_scene
             $ location = "street"
-            $ nextscene = "day" + str(chapter) + "_select"
-            jump expression nextscene
 
 
         "Sayori's House" if location == "street":
+            if time == "morning":
+                scene bg house
             if time == "day":
+                scene bg house
+            if time == "evening":
                 scene bg house
             if time == "night":
                 scene bg home_night
@@ -67,7 +100,11 @@ label move:
             jump expression nextscene
 
         "My House" if location == "street":
+            if time == "morning":
+                scene bg house
             if time == "day":
+                scene bg house
+            if time == "evening":
                 scene bg house
             if time == "night":
                 scene bg home_night
@@ -98,7 +135,11 @@ label move:
             jump expression nextscene
 
         "leave" if location == "kitchen":
+            if time == "morning":
+                scene bg house
             if time == "day":
+                scene bg house
+            if time == "evening":
                 scene bg house
             if time == "night":
                 scene bg home_night
