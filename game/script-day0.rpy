@@ -41,20 +41,6 @@ label day0_main:
     $ location = "kitchen"
     jump expression nextscene
 
- 
-
-
-    m "I just want you to be happy [player]."
-    m "See you soon!"
-    $ m_name = "Girl 3"
-    $ s_name = "Sayori"
-    show screen tear(20, 0.1, 0.1, 0, 40)
-    play sound "sfx/s_kill_glitch1.ogg"
-    pause 0.25
-    hide screen tear
-    hide monika
-    scene bg residential_day
-    with wipeleft_scene
 
 label ch0_school_Sayori:
     play music t2
@@ -646,9 +632,7 @@ label ch0_school_Sayori:
     $ location = "street"
     $ time = "day"
     call day0_select from _call_day0_select
-
     return
-
 
 label ch0_kill:
     $ s_name = "Sayori"
