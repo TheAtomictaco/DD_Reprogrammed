@@ -365,7 +365,7 @@ label autoload:
     jump expression persistent.autoload
 
 label before_main_menu:
-    $ config.main_menu_music = audio.title_theme
+    $ config.main_menu_music = audio.t1
     return
 
 label quit:

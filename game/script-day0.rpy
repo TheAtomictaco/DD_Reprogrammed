@@ -3,10 +3,11 @@ label day0_main:
     $ day0_monika = False
     $ skip_poem = False
     $ energy = 100;
-    $ called_sayo1 =False
+    $ called_sayo1 = False
     $ do_text = "What should I do?"
     $ time = "morning"
     $ state = "Day 1"
+    $ school_sayo = True
     stop music fadeout 2.0
     scene bg residential_day
     with dissolve_scene_full
@@ -42,7 +43,7 @@ label day0_main:
     jump expression nextscene
 
 
-label ch0_school_Sayori:
+label day0_school_Sayori:
     play music t2
     s "Heeeeeeeyyy!!"
     "I see Sayori running toward me from the distance, waving her arms in the air like she's totally oblivious to any attention she might draw to herself."
@@ -105,15 +106,19 @@ label ch0_school_Sayori:
     "Why do I let myself get lectured by such a carefree girl?"
     "More than that, I'm surprised I even let myself relent to her."
     "I guess seeing her worry so much about me makes me want to ease her mind at least a little bit - even if she does exaggerate everything inside of her head."
-
+label day0_school:
     scene bg class_day
     with wipeleft_scene
 
     "The school day is as ordinary as ever, and it's over before I know it."
     "After I pack up my things, I stare blankly at the wall, looking for an ounce of motivation."
-    mc "Clubs..."
-    "Sayori wants me to check out some clubs."
-    "I guess I have no choice but to start with the anime club..."
+    if school_sayo == True:
+        mc "Clubs..."
+        "Sayori wants me to check out some clubs."
+        "I guess I have no choice but to start with the anime club..."
+    if school_sayo == False:
+        "My life is boring."
+        "I wonder how I can turn that around."
 
     s "Hellooo?"
     show sayori 1b zorder 2 at t11

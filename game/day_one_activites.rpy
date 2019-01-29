@@ -2,6 +2,39 @@ label day0_select:
 
     menu:
         "[do_text]"
+        "Use vending machine" if location == "hallway":
+            "Hmm...."
+            $ nextscene = "day" + str(chapter) + "_select"
+            jump expression nextscene
+        "Go to school with Sayori" if time == "morning":
+            $ school_sayo = True
+            if location != "street":
+                scene bg residential_day
+                with wipeleft_scene
+            jump day0_school_Sayori
+
+        "Enter" if location == "school_gate":
+            if time == "morning":
+                $ school_sayo = False
+                $ location = "class"
+                jump day0_school
+            if time == "day":
+                scene bg corridor
+                with wipeleft_scene
+                $ location = "hallway"
+                $ nextscene = "day" + str(chapter) + "_select"
+                jump expression nextscene
+            if time == "evening":
+                scene bg corridor
+                with wipeleft_scene
+                $ location = "hallway"
+                $ nextscene = "day" + str(chapter) + "_select"
+                jump expression nextscene
+            if time == "night":
+                "Why would I want to go to school now?"
+                $ nextscene = "day" + str(chapter) + "_select"
+                jump expression nextscene
+
         "Use phone" if energy >= 25:
             jump use_phone
         "Go to sleep" if location == "room":
@@ -17,6 +50,15 @@ label day0_select:
             else:
                 $ skip_poem = True
             return
+        "Use Computer" if location == "room":
+            if energy >= 10:
+                "It's broken."
+                "Maybe it will work soon?"
+                jump day0_select
+            else:
+                "For some reason I am too tired to use my PC."
+                $ do_text = "Sleep is a wonderful thing."
+                jump day0_select
         "Write my poem" if location == "room":
             if energy >= 10:
                 return
@@ -35,7 +77,6 @@ label day0_select:
                 "I turn to leave."
                 s "[player]?"
                 jump day0_select
-
         "Watch anime" if location == "room":
             if anime0 == False:
                 jump day0_anime

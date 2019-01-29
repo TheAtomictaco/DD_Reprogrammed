@@ -18,16 +18,3 @@ image bg town_day = "mod_assets/bg/town_noon.png"
 image bg town_night = "mod_assets/bg/town_night.png"
 image bg town_after = "mod_assets/bg/town_evening.png"
 image monika_room = "images/cg/monika/monika_room.png"
-
-define audio.perspective = "<loop 22.073>mod_assets/bgm/musicbank/Perspectives.ogg"
-define audio.oea = "<loop 22.073>mod_assets/bgm/oea.ogg"
-define audio.title_theme = "<loop 22.073>mod_assets/bgm/title.ogg"
-
-image Pencil:
-    subpixel True
-    "gui/gui/Pencil.png"
-    xcenter 600
-    ycenter 335
-
-
-
