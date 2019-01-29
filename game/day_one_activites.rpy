@@ -75,7 +75,7 @@ label day0_select:
                     "I am too tired to write my poem."
                     $ do_text = "I should go to sleep."
                     jump day0_select
-        "Vist Sayori" if location == "sayo_house":
+        "Vist Sayori" if location == "s_home":
             "I knock on the door."
             if time == "day":
                 "No response."

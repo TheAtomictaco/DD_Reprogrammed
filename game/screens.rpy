@@ -1133,6 +1133,7 @@ screen extras():
 
                     label _("Mod Info")
                     textbutton _("Discord Server") action Help("Discord.html")
+                
 
                 ## Additional vboxes of type "radio_pref" or "check_pref" can be
                 ## added here, to add additional creator-defined preferences.

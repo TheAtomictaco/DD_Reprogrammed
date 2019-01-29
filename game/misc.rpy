@@ -16,6 +16,7 @@ label move:
                 with wipeleft_scene
                 $ location = "class"
             jump expression nextscene
+
         "ClubRoom" if location == "hallway":
             if time == "morning":
                 scene bg club_day
@@ -89,7 +90,6 @@ label move:
             $ location = "gate"
             jump expression nextscene
 
-
         "Library" if location == "hallway":
             if time == "morning":
                 scene bg library
@@ -139,26 +139,25 @@ label move:
 
         "My Street" if location != "street":
             if time == "morning":
-                scene bg residential_day
+                scene bg street_day
                 with wipeleft_scene
                 $ location = "street"
                 jump expression nextscene
             if time == "day":
-                scene bg residential_day
+                scene bg street_day
                 with wipeleft_scene
                 $ location = "street"
                 jump expression nextscene
             if time == "night":
-                scene bg residential_night
+                scene bg street_night
                 with wipeleft_scene
                 $ location = "street"
                 jump expression nextscene
             if time == "evening":
-                scene bg residential_day
+                scene bg street_day
                 with wipeleft_scene
                 $ location = "street"
                 jump expression nextscene
-
 
         "Sayori's House" if location == "street":
             if time == "morning":
