@@ -13,7 +13,7 @@ label day0_select:
                 with wipeleft_scene
             jump day0_school_Sayori
 
-        "Enter" if location == "school_gate":
+        "Enter" if location == "gate":
             if time == "morning":
                 $ school_sayo = False
                 $ location = "class"
@@ -38,18 +38,23 @@ label day0_select:
         "Use phone" if energy >= 25:
             jump use_phone
         "Go to sleep" if location == "room":
-            if energy >= 50:
-                "I still have a lot of energy left."
-                menu:
-                    "Am I sure I want to go to sleep?"
-                    "Yes":
-                        $ skip_poem = True
-                    "No":
-                        $ do_text = "What to do, what to do?"
-                        jump day0_select
+            if time == "morning":
+                "Um..."
+                "I just woke up, why would I want to sleep?"
+                jump day0_select
             else:
-                $ skip_poem = True
-            return
+                if energy >= 50:
+                    "I still have a lot of energy left."
+                    menu:
+                        "Am I sure I want to go to sleep?"
+                        "Yes":
+                            $ skip_poem = True
+                        "No":
+                            $ do_text = "What to do, what to do?"
+                            jump day0_select
+                else:
+                    $ skip_poem = True
+                return
         "Use Computer" if location == "room":
             if energy >= 10:
                 "It's broken."
@@ -60,12 +65,16 @@ label day0_select:
                 $ do_text = "Sleep is a wonderful thing."
                 jump day0_select
         "Write my poem" if location == "room":
-            if energy >= 10:
-                return
-            else:
-                "I am too tired to write my poem."
-                $ do_text = "I should go to sleep."
+            if time == "morning":
+                "Why would I write a poem?"
                 jump day0_select
+            else:
+                if energy >= 10:
+                    return
+                else:
+                    "I am too tired to write my poem."
+                    $ do_text = "I should go to sleep."
+                    jump day0_select
         "Vist Sayori" if location == "sayo_house":
             "I knock on the door."
             if time == "day":
@@ -78,12 +87,16 @@ label day0_select:
                 s "[player]?"
                 jump day0_select
         "Watch anime" if location == "room":
-            if anime0 == False:
-                jump day0_anime
-            else:
-                "I already did that."
-                $ do_text = "What should I do then?"
+            if time == "morning":
+                "School is more important right now."
                 jump day0_select
+            else:
+                if anime0 == False:
+                    jump day0_anime
+                else:
+                    "I already did that."
+                    $ do_text = "What should I do then?"
+                    jump day0_select
         "Go shopping" if food == False:
             if time == "morning":
                 "I can't go shopping.  I have to go to school."
@@ -100,6 +113,10 @@ label day0_select:
 
 label day0_sayori:
     if energy >=10:
+        if time == "morning":
+            "I will see her later, so I might hold off on calling her."
+            $ do_text = "What should I do instead?"
+            jump day0_select
         if time == "day":
             "Yeah it's been a while since we have hanged out together."
             "I guess I better call her."
@@ -110,7 +127,7 @@ label day0_sayori:
             $ called_sayo1 = True
             $ do_text = "I can't see Sayori so what should I do now?"
             jump day0_select
-        else:
+        if time == "night":
             "It's too late to do that."
             $ do_text = "What should I do instead?"
             jump day0_select
@@ -159,7 +176,7 @@ label day0_monika:
     m "Yes, but I am getting some cookies too."
     mc "Oh...Okay!"
     "Wow, Monika has a sweet tooth!"
-    scene bg town_after
+    scene bg town_evening
     with wipeleft_scene
     "After I bought my food, Monika and I leave the store."
     show monika 1a zorder 1 at t11
@@ -169,7 +186,7 @@ label day0_monika:
     mc "It definitly was."
     play music t8
     "We start on our way home."
-    scene bg residential_night
+    scene bg street_night
     with wipeleft_scene
     show monika 1a zorder 1 at t11
     "We arrive at the street near my house."
