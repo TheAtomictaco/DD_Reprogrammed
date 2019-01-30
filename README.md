@@ -1,5 +1,5 @@
 # DDLC: Reprogrammed
-DDLC: Reprogrammed, is a mod for [Doki Doki Literature Club](https://www.ddlc.moe) made by [Team Salvato](http://teamsalvato.com/).  It is a rewrite of ACT 1 with a free roam system that letss you make tons of choices.  These choices can change the story greatly or just be little funny bits of dialogue.
+DDLC: Reprogrammed, is a mod for [Doki Doki Literature Club](https://www.ddlc.moe) made by [Team Salvato](http://teamsalvato.com/).  It is a rewrite of ACT 1 with a free roam system that lets you make tons of choices.  These choices can change the story greatly or just be little funny bits of dialogue.
 
 
 ### Installation
