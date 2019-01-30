@@ -203,19 +203,6 @@ label move:
             $ location = "room"
             jump expression nextscene
 
-        "leave" if location == "kitchen":
-            if time == "morning":
-                scene bg house
-            if time == "day":
-                scene bg house
-            if time == "evening":
-                scene bg house
-            if time == "night":
-                scene bg home_night
-            with wipeleft_scene
-            $ location = "front_door"
-            jump expression nextscene
-
         "Cancel":
             jump expression nextscene
 
