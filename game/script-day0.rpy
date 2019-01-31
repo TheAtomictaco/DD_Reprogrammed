@@ -12,7 +12,6 @@ label day0_main:
     scene bg residential_day
     with dissolve_scene_full
     play music t2
-    
 
     $ gtext = glitchtext(15)
     s "[gtext]"
@@ -37,7 +36,7 @@ label day0_main:
     "I look in the fridge, but there is hardly anything inside."
     mc "Man, I really need to buy more food."
     "I settle for an apple and orange juice"
-    mc "I should start heading toward school so Sayori won't beat me there."
+    mc "Its about time for me to head to school."
     $ nextscene = "day" + str(chapter) + "_select"
     $ location = "kitchen"
     jump expression nextscene
@@ -51,6 +50,7 @@ label day0_school_Sayori:
     stop music fadeout 2.0
     $ style.say_dialogue = style.edited
     "You already know this, don't you?"
+    "How about we make it more interesting?"
     $ style.say_dialogue = style.normal
     show screen tear(20, 0.1, 0.1, 0, 40)
     play sound "sfx/s_kill_glitch1.ogg"
