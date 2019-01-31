@@ -36,11 +36,11 @@ define gui.idle_color = '#aaaaaa'
 define gui.idle_small_color = '#333'
 
 
-define gui.hover_color = '#389988'
+define gui.hover_color = '#cc6699'
 
 
 
-define gui.selected_color = '#1f7061'
+define gui.selected_color = '#bb5588'
 
 
 define gui.insensitive_color = '#aaaaaa7f'
@@ -195,7 +195,7 @@ define gui.page_button_borders = Borders(10, 4, 10, 4)
 
 define gui.quick_button_text_size = 14
 define gui.quick_button_text_idle_color = "#522"
-define gui.quick_button_text_hover_color = "#ccedff"
+define gui.quick_button_text_hover_color = "#fcc"
 define gui.quick_button_text_selected_color = gui.accent_color
 define gui.quick_button_text_insensitive_color = "#a66"
 
