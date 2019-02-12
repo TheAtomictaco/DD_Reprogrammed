@@ -22,13 +22,15 @@ label day0_main:
     hide screen tear
     scene black
     stop music
-    $ gtext = glitchtext(26)
-    mc "[gtext]"
-    mc "What kind of dream is that?"
-    "I tried to go back to sleep, but there was no use."
+    scene bg monday
+    with fade
+    pause 2.0
+
+
     scene bg bedroom
-    with wipeleft_scene
+    with fade
     play music t8
+
     "Well, I can't just lay here, I should get ready for school."
     "I get changed and head to the kitchen."
     scene bg kitchen
@@ -653,7 +655,7 @@ label ch0_kill:
     s "This can't be it."
     s "This can't be all there is."
     s 4w "What is this?"
-    s "What as I?"
+    s "What am I?"
     s "Make it stop!"
     s "PLEASE MAKE IT STOP!"
 
@@ -663,4 +665,4 @@ label ch0_kill:
     $ delete_character("monika")
     $ renpy.quit()
     return
-# Decompiled by unrpyc: https://github.com/CensoredUsername/unrpyc
+

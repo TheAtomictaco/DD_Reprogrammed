@@ -471,6 +471,7 @@ screen navigation():
 
             textbutton _("Settings") action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
 
+            textbutton _("Extras") action [ShowMenu("extras"), SensitiveIf(renpy.get_screen("extras") == None)]
 
 
             if renpy.variant("pc"):
@@ -1021,6 +1022,35 @@ screen preferences() tag menu:
         xalign 1.0 yalign 1.0
         xoffset -10 yoffset -10
         style "main_menu_version"
+
+
+screen extras() tag menu:
+
+
+
+    if renpy.mobile:
+        $ cols = 2
+    else:
+        $ cols = 4
+
+    use game_menu(_("Extras"), scroll="viewport"):
+
+        vbox:
+            xoffset 50
+
+            hbox:
+                box_wrap True
+
+
+
+                vbox:
+
+                    textbutton _("Gallery") action [ShowMenu("gallery"), SensitiveIf(renpy.get_screen("gallery") == None)]
+
+
+
+
+
 
 style pref_label is gui_label
 style pref_label_text is gui_label_text

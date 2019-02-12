@@ -2,6 +2,9 @@ init python:
     import webbrowser
 
 define config.developer = True
+
+image bg monday = "mod_assets/gui/monday.png"
+
 image bg sayo_kitchen = "mod_assets/bg/sayo_kitchen.png"
 image bg library = "mod_assets/bg/library_base.png"
 image bg park = "mod_assets/bg/park.png"

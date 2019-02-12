@@ -1,6 +1,6 @@
 ## splash screen is first thing that gets shown to player
 init -100 python:
-
+    
     # archive check for mods
     for archive in ['audio','images','fonts']:
         if archive not in config.archives:
