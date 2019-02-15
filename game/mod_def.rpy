@@ -3,7 +3,11 @@ init python:
 
 define config.developer = True
 
+define audio.alarm = "/mod_assets/sfx/alarm.mp3"
+
 image bg monday = "mod_assets/gui/monday.png"
+
+image bg glitch = "mod_assets/bg/download.png"
 
 image bg sayo_kitchen = "mod_assets/bg/sayo_kitchen.png"
 image bg library = "mod_assets/bg/library_base.png"

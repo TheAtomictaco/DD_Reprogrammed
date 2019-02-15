@@ -8,6 +8,12 @@ label day0_main:
     $ time = "morning"
     $ state = "Day 1"
     $ school_sayo = True
+    if not persistent.tease:
+        jump tease
+    else:
+        jump start_day0
+
+label tease:
     stop music fadeout 2.0
     scene bg residential_day
     with dissolve_scene_full
@@ -19,14 +25,30 @@ label day0_main:
     show screen tear(20, 0.1, 0.1, 0, 40)
     play sound "sfx/s_kill_glitch1.ogg"
     pause 0.25
+    stop music
     hide screen tear
-    scene black
+    call updateconsole ("os.install(\"game\script.rpyc\")", "installed successfully.") from _call_updateconsole_17
+    call updateconsole ("os.install(\"game\misc.rpyc\")", "free roam installed successfully.") from _call_updateconsole_18
+    call updateconsole ("os.apply", "applying...") from _call_updateconsole_19
+    call updateconsole ("applying scenes...") from _call_updateconsole_20
+    pause 0.15
+    scene bg glitch
+    with dissolve
+    call updateconsole ("scenes reset!") from _call_updateconsole_21
+    call updateconsole ("applying music...") from _call_updateconsole_22
+    call updateconsole ("Install done!") from _call_updateconsole_23
+    call updateconsole ("Calling script...") from _call_updateconsole_24
+    pause 1.50
+    call hideconsole from _call_hideconsole_3
+    stop music
+    $ persistent.tease = True
+
+label start_day0:
     stop music
     scene bg monday
     with fade
-    pause 2.0
-
-
+    play sound alarm
+    pause 4.0
     scene bg bedroom
     with fade
     play music t8

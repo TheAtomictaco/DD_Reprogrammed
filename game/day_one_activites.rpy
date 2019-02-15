@@ -239,8 +239,9 @@ label day0_anime:
             "I make some soup then head to my room."
     scene bg bedroom
     with wipeleft_scene
-    "I sit on my bed and turn on a action anime"
-    "It's one I have already seen before, but I love it."
+    "I sit on my bed and scroll though the anime selections."
+    mc "Hmm... I still need to finish this one."
+    "I turn on a episode of My Hero Academia and sink into the couch."
     if day0_monika == True:
         "Suddenly I get a message."
         "It's from Monika!"
@@ -254,6 +255,8 @@ label day0_anime:
         "Wow!"
         "I have not even been in the club for more then a day and I already have a girl's number!"
         "I better make sure I keep this up."
+        "Wait, I did not say anything."
+        "It's almost like I am some dense main character or something." 
     scene bg bedroom
     with wipeleft_scene
     "..."
