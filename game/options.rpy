@@ -7,6 +7,7 @@ define config.name = "DDLC Reprogrammed"
 # True shows the name on main menu, False hides it
 define gui.show_name = False
 
+define build.include_update = False
 # Version of the game
 define config.version = "0.0.1"
 
